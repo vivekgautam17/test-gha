@@ -1,9 +1,13 @@
 name: CI
 on:
-  workflow_dispatch:
+  push:
+    branches:
+      - main
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Run a one-line script
-        run: echo "first workflow"
+        run: |
+          echo "first workflow"
+          echo "second line"
