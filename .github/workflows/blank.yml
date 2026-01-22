@@ -7,7 +7,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
       - name: Run a one-line script
         run: |
-          echo "first workflow"
-          echo "second line"
+          echo "added new file"
+          cat text
