@@ -6,6 +6,12 @@ on:
         description: choose the env to deploy
         required: true
         default: dev
+        inputs:
+          - dev
+          - test
+          - prod 
+          - ndr 
+          - dmz
 jobs:
   inputs-demo:
     runs-on: ubuntu-latest
