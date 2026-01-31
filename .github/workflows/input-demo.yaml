@@ -6,7 +6,8 @@ on:
         description: choose the env to deploy
         required: true
         default: dev
-        inputs:
+        type: choice
+        options:
           - dev
           - test
           - prod 
