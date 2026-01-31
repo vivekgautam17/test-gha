@@ -1,16 +1,20 @@
-name: CI
+name: inputs demo
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
+  inputs:
+    name:
+      description: "choose the env to deploy"
+      required: true
+      default: dev
+      options:
+        - dev
+        - prod
+        - qa
+        - staging
 jobs:
-  build:
+  inputs-demo:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Run a one-line script
+      - name: Deploy the application
         run: |
-          echo "added new file"
-          cat text
+          echo "Deploying the application to ${{ inputs.name }}"
